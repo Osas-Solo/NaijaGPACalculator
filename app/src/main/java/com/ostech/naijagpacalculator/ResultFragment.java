@@ -60,8 +60,8 @@ public class ResultFragment extends Fragment {
         cgpaProgressBar.setProgress(cgpaProgressBarValue);
 
         cgpaTextView.setText(String.format("%.2f", cgpa));
-        tnuTextView.setText(String.format("%d", totalCreditUnit));
-        tcpTextView.setText(String.format("%d", totalGradePoint));
+        tnuTextView.setText(String.format("%.0f", totalCreditUnit));
+        tcpTextView.setText(String.format("%.0f", totalGradePoint));
         numberOfCoursesTextView.setText(String.format("%d", numberOfCourses));
         remarkTextView.setText(remark);
 
@@ -89,6 +89,7 @@ public class ResultFragment extends Fragment {
 
     private class SemesterHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
         private ProgressBar gpaProgressBar;
+        private AppCompatTextView gpaSemesterTextView;
         private AppCompatTextView gpaTextView;
         private AppCompatTextView tnuTextView;
         private AppCompatTextView tcpTextView;
@@ -100,6 +101,7 @@ public class ResultFragment extends Fragment {
             super(inflater.inflate(R.layout.holder_result_semester, parent, false));
             itemView.setOnClickListener(this);
 
+            gpaSemesterTextView = itemView.findViewById(R.id.gpa_semester_text_view);
             gpaProgressBar = itemView.findViewById(R.id.gpa_progress_bar);
             gpaTextView = itemView.findViewById(R.id.gpa_text_view);
             tnuTextView = itemView.findViewById(R.id.tnu_text_view);
@@ -123,12 +125,13 @@ public class ResultFragment extends Fragment {
             int cgpaProgressBarUpperRange = (int) (institution.MAXIMUM_GPA * 100);
             int cgpaProgressBarValue = (int) (gpa * 100);
 
+            gpaSemesterTextView.setText(semester.getSemesterName());
             gpaProgressBar.setMax(cgpaProgressBarUpperRange);
             gpaProgressBar.setProgress(cgpaProgressBarValue);
 
             gpaTextView.setText(String.format("%.2f", gpa));
-            tnuTextView.setText(String.format("%d", totalCreditUnit));
-            tcpTextView.setText(String.format("%d", totalGradePoint));
+            tnuTextView.setText(String.format("%.0f", totalCreditUnit));
+            tcpTextView.setText(String.format("%.0f", totalGradePoint));
             numberOfCoursesTextView.setText(String.format("%d", numberOfCourses));
             remarkTextView.setText(remark);
         }

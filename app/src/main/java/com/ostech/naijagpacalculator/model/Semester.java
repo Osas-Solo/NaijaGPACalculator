@@ -37,7 +37,7 @@ public class Semester {
     public void setCourseList(int numberOfCourses) {
         this.courseList = new ArrayList<>(numberOfCourses);
 
-        for (int i = 0; i < numberOfCourses; i++) {
+        for (int i = 1; i <= numberOfCourses; i++) {
             this.courseList.add(new Course("", 0, "A"));
         }
     }
@@ -81,5 +81,11 @@ public class Semester {
 
     public int getNumberOfCourses() {
         return courseList.size();
+    }
+
+    public void addCourses(int numberOfCourses) {
+        for (int i = 1; i <= numberOfCourses; i++) {
+            this.courseList.add(new Course("", 0, "A"));
+        }
     }
 }

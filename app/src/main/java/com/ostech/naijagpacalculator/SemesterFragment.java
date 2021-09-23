@@ -4,15 +4,24 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
+import android.util.Log;
 import android.view.LayoutInflater;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.EditText;
 import android.widget.Spinner;
+import android.widget.Toast;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.widget.AppCompatButton;
+import androidx.appcompat.widget.AppCompatEditText;
+import androidx.appcompat.widget.AppCompatTextView;
+import androidx.fragment.app.DialogFragment;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -28,7 +37,9 @@ import java.util.Arrays;
 
 public class SemesterFragment extends Fragment {
     private static final String TAG = SemesterFragment.class.getCanonicalName();
+
     private static final String ARG_SEMESTER_POSITION = "current_semester";
+    private static final String ARG_ADDITIONAL_NUMBER_OF_COURSES = "number_of_courses";
 
     private RecyclerView semesterRecyclerView;
     private AppCompatButton previousSemesterButton;
@@ -53,6 +64,7 @@ public class SemesterFragment extends Fragment {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        setHasOptionsMenu(true);
 
         semesterPosition = getArguments().getInt(ARG_SEMESTER_POSITION);
         currentSemester = AcademicRecord.getInstance().getSemesterList().get(semesterPosition);
@@ -94,6 +106,12 @@ public class SemesterFragment extends Fragment {
 
         semesterRecyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
 
+        updateSemesterRecyclerView();
+
+        return view;
+    }   //  end of onCreateView()
+
+    private void updateSemesterRecyclerView() {
         ArrayList<Course> courseList = currentSemester.getCourseList();
 
         if (courseAdapter == null) {
@@ -101,12 +119,9 @@ public class SemesterFragment extends Fragment {
             semesterRecyclerView.setAdapter(courseAdapter);
         } else {
             courseAdapter.setCourses(courseList);
+            courseAdapter.notifyDataSetChanged();
         }
-
-        setHasOptionsMenu(true);
-
-        return view;
-    }   //  end of onCreateView()
+    }
 
     private void updateButtonsVisibility() {
         calculateButton.setVisibility(View.INVISIBLE);
@@ -142,7 +157,51 @@ public class SemesterFragment extends Fragment {
     public void onResume() {
         super.onResume();
         updateButtonsVisibility();
+        updateSemesterRecyclerView();
         getActivity().setTitle(currentSemester.getSemesterName());
+    }
+
+    public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
+        super.onCreateOptionsMenu(menu, inflater);
+        inflater.inflate(R.menu.fragment_semester, menu);
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        if (item.getItemId() == R.id.add_courses_menu_item) {
+            AddCoursesDialogFragment dialog = AddCoursesDialogFragment.newInstance();
+            dialog.show(getActivity().getSupportFragmentManager(), ARG_ADDITIONAL_NUMBER_OF_COURSES);
+
+            return true;
+        }
+        return super.onOptionsItemSelected(item);
+    }
+
+    public void addCoursesToSemester() {
+        int additionalNumberOfCourses = ((SemesterPagerActivity) getActivity()).
+                additionalNumberOfCourses;
+
+        if (additionalNumberOfCourses > 0) {
+            Toast courseAddedToast = new Toast(getActivity());
+            courseAddedToast.setDuration(Toast.LENGTH_SHORT);
+
+            Log.i(TAG, "addCoursesToSemester: Number of courses: " + additionalNumberOfCourses);
+
+            int totalNumberOfCoursesInSemester = currentSemester.getNumberOfCourses() +
+                    additionalNumberOfCourses;
+
+            if (totalNumberOfCoursesInSemester < 30) {
+                courseAddedToast.setText(getString(R.string.courses_added_successfully_toast,
+                        additionalNumberOfCourses));
+
+                currentSemester.addCourses(additionalNumberOfCourses);
+                updateSemesterRecyclerView();
+            } else {
+                courseAddedToast.setText(getString(R.string.too_many_courses_in_semester_toast));
+            }
+
+            courseAddedToast.show();
+        }
     }
 
     private class CourseHolder extends RecyclerView.ViewHolder implements View.OnClickListener {

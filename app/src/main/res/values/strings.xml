@@ -99,4 +99,6 @@
     <string name="too_many_courses_in_semester_toast">
         The maximum number of courses allowed in a semester is 30
     </string>
+    <string name="add_courses">Add Course(s)</string>
+    <string name="courses_added_successfully_toast">%2d course(s) added successfully</string>
 </resources>

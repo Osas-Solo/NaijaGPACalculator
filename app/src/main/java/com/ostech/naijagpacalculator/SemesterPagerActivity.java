@@ -3,13 +3,17 @@ package com.ostech.naijagpacalculator;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.MenuItem;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBarDrawerToggle;
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.AppCompatEditText;
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
+import androidx.fragment.app.DialogFragment;
 import androidx.fragment.app.Fragment;
 import androidx.viewpager2.adapter.FragmentStateAdapter;
 import androidx.viewpager2.widget.ViewPager2;
@@ -19,9 +23,11 @@ import com.ostech.naijagpacalculator.model.AcademicRecord;
 import com.ostech.naijagpacalculator.model.Semester;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class SemesterPagerActivity extends AppCompatActivity
-        implements NavigationView.OnNavigationItemSelectedListener {
+        implements NavigationView.OnNavigationItemSelectedListener,
+        AddCoursesDialogFragment.AddCoursesDialogListener {
 
     private static final String TAG = SemesterPagerActivity.class.getCanonicalName();
 
@@ -32,6 +38,7 @@ public class SemesterPagerActivity extends AppCompatActivity
     public ViewPager2 semesterViewPager;
 
     private static ArrayList<Semester> semesterList;
+    public int additionalNumberOfCourses = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -71,7 +78,11 @@ public class SemesterPagerActivity extends AppCompatActivity
     @Override
     public void onBackPressed() {
         if (semesterViewPager.getCurrentItem() == 0) {
-            super.onBackPressed();
+            new AlertDialog.Builder(this)
+                    .setMessage("Are you sure you want to reset the course details you have entered?")
+                    .setPositiveButton("Yes", (dialog, which) -> finish())
+                    .setNegativeButton("No", null)
+                    .show();
         } else {
             semesterViewPager.setCurrentItem(semesterViewPager.getCurrentItem() - 1);
         }
@@ -136,5 +147,32 @@ public class SemesterPagerActivity extends AppCompatActivity
         Intent intent = new Intent(context, SemesterPagerActivity.class);
 
         return intent;
+    }
+
+    @Override
+    public void onDialogPositiveClick(DialogFragment dialog) {
+        AppCompatEditText addCoursesEditText = ((AddCoursesDialogFragment) dialog).addCoursesEditText;
+
+        additionalNumberOfCourses = (addCoursesEditText.getText().toString() == "")
+                ? 0 : Integer.parseInt(addCoursesEditText.getText().toString());
+
+        Log.i(TAG, "onDialogPositiveClick: number of courses " + additionalNumberOfCourses);
+
+        SemesterFragment currentSemesterFragment = (SemesterFragment) getCurrentSemesterFragment();
+
+        currentSemesterFragment.addCoursesToSemester();
+    }
+
+    public Fragment getCurrentSemesterFragment(){
+        List<Fragment> fragments = getSupportFragmentManager().getFragments();
+
+        if (fragments != null){
+            for (Fragment currentFragment : fragments) {
+                if (currentFragment != null && currentFragment.isVisible())
+                    return currentFragment;
+            }
+        }
+
+        return null;
     }
 }

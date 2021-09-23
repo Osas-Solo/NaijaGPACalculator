@@ -20,10 +20,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:gravity="center"
-        android:layout_marginTop="30dp"
         android:text="@string/first_semester_label"
-        app:layout_constraintTop_toTopOf="@+id/intro_level_name"
-        app:layout_constraintBottom_toTopOf="@id/second_semester_check_box"
+        app:layout_constraintTop_toBottomOf="@+id/intro_level_name"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"/>
 
@@ -32,10 +30,10 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:gravity="center"
-        android:layout_marginTop="30dp"
         android:text="@string/second_semester_label"
-        app:layout_constraintTop_toTopOf="@+id/first_semester_check_box"
+        app:layout_constraintTop_toBottomOf="@+id/first_semester_check_box"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"/>
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

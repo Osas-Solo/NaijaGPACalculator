@@ -1,5 +1,7 @@
 package com.ostech.naijagpacalculator.model;
 
+import java.util.Arrays;
+
 public class Polytechnic extends Institution{
     public final double MAXIMUM_GPA = 4.0;
 
@@ -31,4 +33,7 @@ public class Polytechnic extends Institution{
         return remark;
     }
 
+    public double getGradePoint(String grade) {
+        return points[Arrays.binarySearch(grades, grade)];
+    }
 }
