@@ -1,6 +1,7 @@
 package com.ostech.naijagpacalculator;
 
 import android.content.Intent;
+import android.content.res.Configuration;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
@@ -23,6 +24,7 @@ import androidx.appcompat.widget.AppCompatEditText;
 import androidx.appcompat.widget.AppCompatTextView;
 import androidx.fragment.app.DialogFragment;
 import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -104,7 +106,15 @@ public class SemesterFragment extends Fragment {
             }
         });
 
-        semesterRecyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
+        int orientation = getResources().getConfiguration().orientation;
+
+        if (orientation == Configuration.ORIENTATION_PORTRAIT) {
+            semesterRecyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
+        } else {
+            int numberOfColumns = 3;
+            semesterRecyclerView.setLayoutManager(new GridLayoutManager(getActivity(),
+                    numberOfColumns));
+        }
 
         updateSemesterRecyclerView();
 

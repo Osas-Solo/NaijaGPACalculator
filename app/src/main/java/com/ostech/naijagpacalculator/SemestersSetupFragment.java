@@ -54,8 +54,6 @@ public class SemestersSetupFragment extends Fragment {
             }
         });
 
-        setHasOptionsMenu(true);
-
         return view;
     }   //  end of onCreateView()
 

@@ -171,7 +171,6 @@ public class IntroFragment extends Fragment {
         public void onClick(View view) {
         }
 
-
         public void bind(Level level) {
             this.level = level;
             levelNameTextView.setText(this.level.getLevelName());
