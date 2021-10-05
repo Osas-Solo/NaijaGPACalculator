@@ -1,6 +1,9 @@
 package com.ostech.naijagpacalculator.model;
 
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.List;
 
 public class AcademicRecord {
     private static final AcademicRecord academicRecord = new AcademicRecord();
@@ -74,7 +77,6 @@ public class AcademicRecord {
         return totalGradePoint;
     }
 
-
     public int getNumberOfCourses() {
         int totalCourseNumber = 0;
 
@@ -83,5 +85,11 @@ public class AcademicRecord {
         }
 
         return totalCourseNumber;
+    }
+
+    public void sortCoursesInSemesters() {
+        for (Semester currentSemester: semesterList) {
+            Collections.sort(currentSemester.getCourseList(), Course.courseCodeComparator);
+        }
     }
 }

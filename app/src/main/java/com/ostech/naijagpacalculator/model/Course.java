@@ -1,5 +1,7 @@
 package com.ostech.naijagpacalculator.model;
 
+import java.util.Comparator;
+
 public class Course {
     private String courseCode;
     private int creditUnit;
@@ -34,4 +36,13 @@ public class Course {
         setCreditUnit(creditUnit);
         setGrade(grade);
     }
+
+    public static Comparator<Course> courseCodeComparator = (firstCourse, secondCourse) -> {
+        String firstCourseCode = firstCourse.getCourseCode().toUpperCase();
+        String secondCourseCode = secondCourse.getCourseCode().toUpperCase();
+
+        return firstCourseCode.compareTo(secondCourseCode);
+    };
+
+
 }
