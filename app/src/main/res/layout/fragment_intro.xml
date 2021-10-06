@@ -57,8 +57,7 @@
             <androidx.appcompat.widget.AppCompatTextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/levels_label"
-                android:layout_marginBottom="20dp"/>
+                android:text="@string/levels_label"/>
 
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/intro_semesters_recycler_view"
