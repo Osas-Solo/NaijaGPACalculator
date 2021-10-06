@@ -32,7 +32,7 @@ public class SemestersSetupActivity extends AppCompatActivity
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_semesters_setup);
 
-        rootLayout = findViewById(R.id.semester_pager_drawer_layout);
+        rootLayout = findViewById(R.id.semesters_setup_drawer_layout);
         drawerToggler = new ActionBarDrawerToggle(this, rootLayout, R.string.nav_open,
                 R.string.nav_close);
         navigationView = findViewById(R.id.semesters_setup_navigation_view);
@@ -63,13 +63,13 @@ public class SemestersSetupActivity extends AppCompatActivity
                 if (!(onScreenFragment instanceof HelpFragment)) {
                     switchFragment(new HelpFragment());
                 }
-                break;
+                break;*/
 
             case R.id.about_menu_item:
                 if (!(onScreenFragment instanceof AboutFragment)) {
                     switchFragment(new AboutFragment());
                 }
-                break;*/
+                break;
 
             default:
                 return super.onOptionsItemSelected(item);

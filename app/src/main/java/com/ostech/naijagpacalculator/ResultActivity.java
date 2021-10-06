@@ -61,13 +61,13 @@ public class ResultActivity extends AppCompatActivity
                 if (!(onScreenFragment instanceof HelpFragment)) {
                     switchFragment(new HelpFragment());
                 }
-                break;
+                break;*/
 
             case R.id.about_menu_item:
                 if (!(onScreenFragment instanceof AboutFragment)) {
                     switchFragment(new AboutFragment());
                 }
-                break;*/
+                break;
 
             default:
                 return super.onOptionsItemSelected(item);

@@ -64,12 +64,13 @@ public class NavigationActivity extends AppCompatActivity
                     switchFragment(new HelpFragment());
                 }
                 break;
+                */
 
             case R.id.about_menu_item:
                 if (!(onScreenFragment instanceof AboutFragment)) {
                     switchFragment(new AboutFragment());
                 }
-                break;*/
+                break;
 
             default:
                 return super.onOptionsItemSelected(item);
