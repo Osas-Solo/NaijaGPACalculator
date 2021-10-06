@@ -48,7 +48,7 @@ public class SemesterPagerActivity extends AppCompatActivity
         rootLayout = findViewById(R.id.semester_pager_drawer_layout);
         drawerToggler = new ActionBarDrawerToggle(this, rootLayout, R.string.nav_open,
                 R.string.nav_close);
-        navigationView = findViewById(R.id.semester_pager_navigation);
+        navigationView = findViewById(R.id.semester_pager_navigation_view);
         navigationView.setNavigationItemSelectedListener(this);
         rootLayout.addDrawerListener(drawerToggler);
         drawerToggler.syncState();
@@ -108,13 +108,11 @@ public class SemesterPagerActivity extends AppCompatActivity
                 if (!(onScreenFragment instanceof HelpFragment)) {
                     switchFragment(new HelpFragment());
                 }
-                break;
+                break;*/
 
             case R.id.about_menu_item:
-                if (!(onScreenFragment instanceof AboutFragment)) {
-                    switchFragment(new AboutFragment());
-                }
-                break;*/
+                returnHome("ABOUT_FRAGMENT");
+                break;
 
             default:
                 return super.onOptionsItemSelected(item);
@@ -127,6 +125,13 @@ public class SemesterPagerActivity extends AppCompatActivity
 
     private void returnHome() {
         Intent intent = new Intent(this, NavigationActivity.class);
+        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+        startActivity(intent);
+    }
+
+    private void returnHome(String fragmentName) {
+        Intent intent = new Intent(this, NavigationActivity.class);
+        intent.putExtra(fragmentName, fragmentName);
         intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
         startActivity(intent);
     }

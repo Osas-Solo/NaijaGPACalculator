@@ -19,6 +19,9 @@ public class NavigationActivity extends AppCompatActivity
 
     private static final String TAG = NavigationActivity.class.getCanonicalName();
 
+    private static final String ABOUT_FRAGMENT = "ABOUT_FRAGMENT";
+    private static final String HELP_FRAGMENT = "HELP_FRAGMENT";
+
     private DrawerLayout rootLayout;
     private ActionBarDrawerToggle drawerToggler;
     private NavigationView navigationView;
@@ -39,6 +42,27 @@ public class NavigationActivity extends AppCompatActivity
         drawerToggler.syncState();
 
         switchFragment(new IntroFragment());
+
+        if (getIntent() != null) {
+            String fragmentName = getIntent().getStringExtra(ABOUT_FRAGMENT);
+
+            if (fragmentName == null) {
+                fragmentName = getIntent().getStringExtra(HELP_FRAGMENT);
+            }
+
+            if (fragmentName != null) {
+                switch (fragmentName) {
+                    case ABOUT_FRAGMENT:
+                        switchFragment(new AboutFragment());
+                        break;
+
+                    /*case HELP_FRAGMENT:
+                        switchFragment(new HelpFragment());
+                        break;*/
+                }
+            }
+        }
+
     }   //  end of onCreate()
 
     @Override

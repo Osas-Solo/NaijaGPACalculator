@@ -14,7 +14,7 @@
     </androidx.viewpager2.widget.ViewPager2>
 
     <com.google.android.material.navigation.NavigationView
-        android:id="@+id/semester_pager_navigation"
+        android:id="@+id/semester_pager_navigation_view"
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
         android:layout_gravity="start"
