@@ -33,7 +33,7 @@ public class NavigationActivity extends AppCompatActivity
         rootLayout = findViewById(R.id.drawer_layout);
         drawerToggler = new ActionBarDrawerToggle(this, rootLayout, R.string.nav_open,
                 R.string.nav_close);
-        navigationView = findViewById(R.id.navigation);
+        navigationView = findViewById(R.id.navigation_view);
         navigationView.setNavigationItemSelectedListener(this);
         rootLayout.addDrawerListener(drawerToggler);
         drawerToggler.syncState();
