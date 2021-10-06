@@ -43,6 +43,10 @@ public class NavigationActivity extends AppCompatActivity
 
         switchFragment(new IntroFragment());
 
+        switchToAboutOrHelpFragment();
+    }   //  end of onCreate()
+
+    void switchToAboutOrHelpFragment() {
         if (getIntent() != null) {
             String fragmentName = getIntent().getStringExtra(ABOUT_FRAGMENT);
 
@@ -62,8 +66,7 @@ public class NavigationActivity extends AppCompatActivity
                 }
             }
         }
-
-    }   //  end of onCreate()
+    }
 
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
