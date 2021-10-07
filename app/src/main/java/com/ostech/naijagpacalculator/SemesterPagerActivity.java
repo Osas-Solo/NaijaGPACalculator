@@ -53,6 +53,8 @@ public class SemesterPagerActivity extends AppCompatActivity
         rootLayout.addDrawerListener(drawerToggler);
         drawerToggler.syncState();
 
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
         semesterViewPager = findViewById(R.id.semester_view_pager);
 
         semesterList = AcademicRecord.getInstance().getSemesterList();
@@ -129,9 +131,9 @@ public class SemesterPagerActivity extends AppCompatActivity
         startActivity(intent);
     }
 
-    private void returnHome(String fragmentName) {
+    private void returnHome(String destinationFragmentName) {
         Intent intent = new Intent(this, NavigationActivity.class);
-        intent.putExtra(fragmentName, fragmentName);
+        intent.putExtra(destinationFragmentName, destinationFragmentName);
         intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
         startActivity(intent);
     }

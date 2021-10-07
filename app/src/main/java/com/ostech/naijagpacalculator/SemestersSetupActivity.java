@@ -40,6 +40,8 @@ public class SemestersSetupActivity extends AppCompatActivity
         rootLayout.addDrawerListener(drawerToggler);
         drawerToggler.syncState();
 
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
         switchFragment(new SemestersSetupFragment());
     }   //  end of onCreate()
 

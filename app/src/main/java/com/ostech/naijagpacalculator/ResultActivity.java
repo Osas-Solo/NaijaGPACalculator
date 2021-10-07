@@ -38,6 +38,8 @@ public class ResultActivity extends AppCompatActivity
         rootLayout.addDrawerListener(drawerToggler);
         drawerToggler.syncState();
 
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
         switchFragment(new ResultFragment());
     }   //  end of onCreate()
 

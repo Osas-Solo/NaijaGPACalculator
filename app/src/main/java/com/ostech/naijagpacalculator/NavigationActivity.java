@@ -10,6 +10,7 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 
 import android.os.Bundle;
+import android.util.Log;
 import android.view.MenuItem;
 
 import com.google.android.material.navigation.NavigationView;
@@ -41,21 +42,25 @@ public class NavigationActivity extends AppCompatActivity
         rootLayout.addDrawerListener(drawerToggler);
         drawerToggler.syncState();
 
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
+        Log.i(TAG, "onCreate: Navigation View " + navigationView.getVisibility());
+
         switchFragment(new IntroFragment());
 
         switchToAboutOrHelpFragment();
     }   //  end of onCreate()
 
-    void switchToAboutOrHelpFragment() {
+    private void switchToAboutOrHelpFragment() {
         if (getIntent() != null) {
-            String fragmentName = getIntent().getStringExtra(ABOUT_FRAGMENT);
+            String destinationFragmentName = getIntent().getStringExtra(ABOUT_FRAGMENT);
 
-            if (fragmentName == null) {
-                fragmentName = getIntent().getStringExtra(HELP_FRAGMENT);
+            if (destinationFragmentName == null) {
+                destinationFragmentName = getIntent().getStringExtra(HELP_FRAGMENT);
             }
 
-            if (fragmentName != null) {
-                switch (fragmentName) {
+            if (destinationFragmentName != null) {
+                switch (destinationFragmentName) {
                     case ABOUT_FRAGMENT:
                         switchFragment(new AboutFragment());
                         break;
