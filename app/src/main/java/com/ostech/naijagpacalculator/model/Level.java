@@ -32,7 +32,7 @@ public class Level {
             this.semesters.add(new LevelSemester(this.levelName));
 
             String semesterName = this.levelName + " " + ((i == 0) ? "1st " : "2nd ") +
-                    " Semester";
+                    "Semester";
             this.semesters.get(i).setSemesterName(semesterName);
         }
     }

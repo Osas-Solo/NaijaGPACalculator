@@ -6,19 +6,29 @@
         <item name="android:paddingLeft">20dp</item>
         <item name="android:paddingRight">20dp</item>
         <item name="android:textAllCaps">false</item>
+        <item name="android:textSize">14sp</item>
     </style>
 
     <style name="GPACalculatorDarkButton" parent="GPACalculatorButton">
-        <item name="android:background">@color/mid_purple</item>
+        <item name="android:background">@color/purple</item>
         <item name="android:textColor">@color/light_grey</item>
     </style>
     
     <style name="GPACalculatorEditText" parent="Widget.AppCompat.EditText">
         <item name="android:background">@drawable/input_border</item>
         <item name="android:padding">20dp</item>
+        <item name="android:textSize">14sp</item>
+    </style>
+
+    <style name="GPACalculatorSpinner" parent="Widget.AppCompat.Spinner">
+        <item name="android:background">@drawable/input_border</item>
+        <item name="android:padding">20dp</item>
+        <item name="android:textAlignment">center</item>
+        <item name="android:textSize">14sp</item>
+        <item name="android:spinnersShown">true</item>
     </style>
 
     <style name="GPACalculatorTextView" parent="Widget.AppCompat.TextView">
-        <item name="android:textSize">16dp</item>
+        <item name="android:textSize">14sp</item>
     </style>
 </resources>

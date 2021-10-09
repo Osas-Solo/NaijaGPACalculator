@@ -8,6 +8,7 @@
 
         <item name="buttonStyle">@style/GPACalculatorButton</item>
         <item name="editTextStyle">@style/GPACalculatorEditText</item>
+        <item name="spinnerStyle">@style/GPACalculatorSpinner</item>
         <item name="android:textViewStyle">@style/GPACalculatorTextView</item>
         <!-- Secondary brand color. -->
         <item name="colorSecondary">@color/teal_200</item>
