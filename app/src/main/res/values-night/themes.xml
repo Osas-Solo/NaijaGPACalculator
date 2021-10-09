@@ -1,10 +1,14 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
     <!-- Base application theme. -->
-    <style name="Theme.NaijaGPACalculator" parent="Theme.MaterialComponents.DayNight.DarkActionBar">
+    <style name="Theme.NaijaGPACalculator" parent="Theme.AppCompat.DayNight">
         <!-- Primary brand color. -->
-        <item name="colorPrimary">@color/purple_200</item>
-        <item name="colorPrimaryVariant">@color/purple_700</item>
+        <item name="colorPrimary">@color/purple</item>
+        <item name="colorPrimaryVariant">@color/mid_purple</item>
         <item name="colorOnPrimary">@color/black</item>
+
+        <item name="buttonStyle">@style/GPACalculatorDarkButton</item>
+        <item name="editTextStyle">@style/GPACalculatorEditText</item>
+        <item name="android:textViewStyle">@style/GPACalculatorTextView</item>
         <!-- Secondary brand color. -->
         <item name="colorSecondary">@color/teal_200</item>
         <item name="colorSecondaryVariant">@color/teal_200</item>
