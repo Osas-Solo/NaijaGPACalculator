@@ -10,7 +10,7 @@
     </style>
 
     <style name="GPACalculatorDarkButton" parent="GPACalculatorButton">
-        <item name="android:background">@color/purple</item>
+        <item name="android:background">@color/dark_purple</item>
         <item name="android:textColor">@color/light_grey</item>
     </style>
     
@@ -21,7 +21,7 @@
     </style>
 
     <style name="GPACalculatorSpinner" parent="Widget.AppCompat.Spinner">
-        <item name="android:background">@drawable/input_border</item>
+        <item name="android:background">@drawable/spinner_background</item>
         <item name="android:padding">20dp</item>
         <item name="android:textAlignment">center</item>
         <item name="android:textSize">14sp</item>
