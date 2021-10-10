@@ -9,10 +9,10 @@
         android:id="@+id/holder_result_semester_name_text_view"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Semester Name"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        style="@style/GPACalculatorHeaderTextView"/>
 
     <HorizontalScrollView
         android:layout_width="wrap_content"
@@ -40,7 +40,8 @@
                     android:padding="5dp"
                     android:textAlignment="center"
                     android:gravity="center_horizontal"
-                    android:text="@string/course_code_label" />
+                    android:text="@string/course_code_label"
+                    android:textStyle="bold"/>
 
                 <androidx.appcompat.widget.AppCompatTextView
                     android:layout_width="wrap_content"
@@ -49,7 +50,8 @@
                     android:padding="5dp"
                     android:textAlignment="center"
                     android:gravity="center_horizontal"
-                    android:text="@string/credit_unit_label"/>
+                    android:text="@string/credit_unit_label"
+                    android:textStyle="bold"/>
 
                 <androidx.appcompat.widget.AppCompatTextView
                     android:layout_width="wrap_content"
@@ -58,7 +60,8 @@
                     android:padding="5dp"
                     android:textAlignment="center"
                     android:gravity="center_horizontal"
-                    android:text="@string/grade_label"/>
+                    android:text="@string/grade_label"
+                    android:textStyle="bold"/>
             </TableRow>
 
         </TableLayout>

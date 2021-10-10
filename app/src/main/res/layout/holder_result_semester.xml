@@ -21,7 +21,8 @@
             android:layout_height="wrap_content"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"/>
+            app:layout_constraintEnd_toEndOf="parent"
+            style="@style/GPACalculatorHeaderTextView"/>
 
         <androidx.appcompat.widget.AppCompatTextView
             android:id="@+id/gpa_label_text_view"
@@ -33,25 +34,15 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"/>
 
-        <ProgressBar
-            android:id="@+id/gpa_progress_bar"
-            android:indeterminate="false"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_marginTop="20dp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="@id/gpa_label_text_view" />
-
         <androidx.appcompat.widget.AppCompatTextView
             android:id="@+id/gpa_text_view"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            app:layout_constraintBottom_toBottomOf="@id/gpa_progress_bar"
-            app:layout_constraintEnd_toEndOf="@id/gpa_progress_bar"
-            app:layout_constraintStart_toStartOf="@id/gpa_progress_bar"
-            app:layout_constraintTop_toTopOf="@id/gpa_progress_bar"/>
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/gpa_label_text_view"
+            style="@style/GPACalculatorHeaderTextView"/>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

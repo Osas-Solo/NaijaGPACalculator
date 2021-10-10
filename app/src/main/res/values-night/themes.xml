@@ -15,7 +15,7 @@
         <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>
 
         <!-- Customize your theme here. -->
-        <item name="buttonStyle">@style/GPACalculatorDarkButton</item>
+        <item name="buttonStyle">@style/GPACalculatorButton</item>
         <item name="editTextStyle">@style/GPACalculatorEditText</item>
         <item name="spinnerStyle">@style/GPACalculatorSpinner</item>
         <item name="android:textViewStyle">@style/GPACalculatorTextView</item>
