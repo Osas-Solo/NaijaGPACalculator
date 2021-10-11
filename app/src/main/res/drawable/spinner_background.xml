@@ -1,9 +1,6 @@
-
-<selector xmlns:android="http://schemas.android.com/apk/res/android">
-    <layer-list>
+    <layer-list xmlns:android="http://schemas.android.com/apk/res/android">
         <item>
             <shape
-                xmlns:android="http://schemas.android.com/apk/res/android"
                 android:shape="rectangle">
                 <solid
                     android:color="@android:color/transparent"/>
@@ -20,7 +17,6 @@
         </item>
 
         <item>
-            <bitmap android:gravity="bottom|right" android:src="@drawable/ic_drop_down"/>
+            <bitmap android:gravity="right" android:src="@drawable/ic_drop_down"/>
         </item>
     </layer-list>
-</selector>
