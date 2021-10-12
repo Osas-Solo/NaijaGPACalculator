@@ -2,7 +2,7 @@
 <resources>
 
     <style name="GPACalculatorSpinner" parent="Widget.AppCompat.Spinner">
-        <item name="android:background">@drawable/input_border</item>
+        <item name="android:background">@drawable/spinner_background</item>
         <item name="android:padding">20dp</item>
         <item name="android:textAlignment">center</item>
     </style>
