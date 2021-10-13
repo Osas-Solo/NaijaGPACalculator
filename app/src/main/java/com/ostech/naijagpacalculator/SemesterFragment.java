@@ -219,6 +219,8 @@ public class SemesterFragment extends Fragment {
         ArrayList<Course> courseList = currentSemester.getCourseList();
 
         courseList.remove(unneededCourse);
+
+        updateSemesterRecyclerView();
     }
 
     private class CourseHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
