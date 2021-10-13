@@ -102,6 +102,8 @@
     <string name="add_courses">Add Course(s)</string>
     <string name="courses_added_successfully_toast">%2d course(s) added successfully</string>
 
+    <string name="course_deleted_successfully_toast">%1s deleted successfully</string>
+
     <string name="version_title"><b>Version:</b></string>
     <string name="github_repository_title"><b>Project Source Code:</b></string>
     <string name="github_repository_link">

@@ -221,6 +221,12 @@ public class SemesterFragment extends Fragment {
         courseList.remove(unneededCourse);
 
         updateSemesterRecyclerView();
+
+        Toast courseDeletedToast = new Toast(getActivity());
+        courseDeletedToast.setDuration(Toast.LENGTH_SHORT);
+        courseDeletedToast.setText(getString(R.string.course_deleted_successfully_toast,
+                unneededCourse.getCourseCode()));
+        courseDeletedToast.show();
     }
 
     private class CourseHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
