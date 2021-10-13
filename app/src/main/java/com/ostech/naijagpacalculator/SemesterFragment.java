@@ -215,6 +215,12 @@ public class SemesterFragment extends Fragment {
         }
     }
 
+    private void deleteCourse(Course unneededCourse) {
+        ArrayList<Course> courseList = currentSemester.getCourseList();
+
+        courseList.remove(unneededCourse);
+    }
+
     private class CourseHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
         private EditText semesterCourseCodeEditText;
         private EditText semesterCreditUnitEditText;
@@ -288,7 +294,7 @@ public class SemesterFragment extends Fragment {
             semesterDeleteCourseButton.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-
+                    deleteCourse(course);
                 }
             });
         }
