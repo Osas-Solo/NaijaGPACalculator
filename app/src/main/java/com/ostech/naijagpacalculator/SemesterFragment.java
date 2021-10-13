@@ -15,6 +15,7 @@ import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.Spinner;
 import android.widget.Toast;
 
@@ -218,6 +219,7 @@ public class SemesterFragment extends Fragment {
         private EditText semesterCourseCodeEditText;
         private EditText semesterCreditUnitEditText;
         private Spinner semesterGradeSpinner;
+        private ImageButton semesterDeleteCourseButton;
 
         private Course course;
 
@@ -228,6 +230,7 @@ public class SemesterFragment extends Fragment {
             semesterCourseCodeEditText = itemView.findViewById(R.id.semester_course_code_edit_text);
             semesterCreditUnitEditText = itemView.findViewById(R.id.semester_credit_unit_edit_text);
             semesterGradeSpinner = itemView.findViewById(R.id.semester_grade_spinner);
+            semesterDeleteCourseButton = itemView.findViewById(R.id.semester_delete_course_image_button);
 
             semesterCourseCodeEditText.addTextChangedListener(new TextWatcher() {
                 @Override
@@ -278,6 +281,13 @@ public class SemesterFragment extends Fragment {
 
                 @Override
                 public void onNothingSelected(AdapterView<?> parent) {
+
+                }
+            });
+
+            semesterDeleteCourseButton.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
 
                 }
             });
