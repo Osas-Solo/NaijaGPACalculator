@@ -106,11 +106,9 @@ public class SemesterPagerActivity extends AppCompatActivity
                 returnHome();
                 break;
 
-            /*case R.id.help_menu_item:
-                if (!(onScreenFragment instanceof HelpFragment)) {
-                    switchFragment(new HelpFragment());
-                }
-                break;*/
+            case R.id.help_menu_item:
+                returnHome("HELP_FRAGMENT");
+                break;
 
             case R.id.about_menu_item:
                 returnHome("ABOUT_FRAGMENT");

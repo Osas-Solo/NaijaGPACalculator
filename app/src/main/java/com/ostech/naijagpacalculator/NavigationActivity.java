@@ -48,6 +48,7 @@ public class NavigationActivity extends AppCompatActivity
 
         switchFragment(new IntroFragment());
 
+        //  when activity is started as an intent from SemesterPagerActivity
         switchToAboutOrHelpFragment();
     }   //  end of onCreate()
 
@@ -65,9 +66,9 @@ public class NavigationActivity extends AppCompatActivity
                         switchFragment(new AboutFragment());
                         break;
 
-                    /*case HELP_FRAGMENT:
+                    case HELP_FRAGMENT:
                         switchFragment(new HelpFragment());
-                        break;*/
+                        break;
                 }
             }
         }
@@ -91,12 +92,11 @@ public class NavigationActivity extends AppCompatActivity
                 }
                 break;
 
-            /*case R.id.help_menu_item:
+            case R.id.help_menu_item:
                 if (!(onScreenFragment instanceof HelpFragment)) {
                     switchFragment(new HelpFragment());
                 }
                 break;
-                */
 
             case R.id.about_menu_item:
                 if (!(onScreenFragment instanceof AboutFragment)) {

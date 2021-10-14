@@ -61,11 +61,11 @@ public class SemestersSetupActivity extends AppCompatActivity
                 returnHome();
                 break;
 
-            /*case R.id.help_menu_item:
+            case R.id.help_menu_item:
                 if (!(onScreenFragment instanceof HelpFragment)) {
                     switchFragment(new HelpFragment());
                 }
-                break;*/
+                break;
 
             case R.id.about_menu_item:
                 if (!(onScreenFragment instanceof AboutFragment)) {
