@@ -5,6 +5,98 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Help</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            --primary-color: #A702C4;
+            --grey-color1: #F2F2F2;
+            --grey-color2: #E6E6E6;
+            --drop-shadow: 0px 5px 5px rgba(0, 0, 0, 0.50);
+            font-family: Verdana, Arial, sans-serif;
+            letter-spacing: 0.1em;
+            word-spacing: 0.2em;
+            line-height: 1.6em;
+        }
+
+        article {
+            padding: 20px;
+        }
+
+        table {
+            width: 100%;
+            padding: 10px;
+            margin: 20px auto 0 auto;
+            margin-bottom: 50px;
+            font-weight: bold;
+            border-collapse: collapse;
+            box-shadow: var(--drop-shadow);
+        }
+
+        tr:nth-child(odd) {
+            background-color: var(--grey-color1);
+        }
+
+        tr:nth-child(even) {
+            background-color: var(--grey-color2);
+        }
+
+        th, td {
+            text-align: center;
+            padding: 5px;
+        }
+
+        th {
+            color: var(--primary-color);
+            font-size: 1.2em;
+        }
+
+        p {
+            margin: 10px;
+        }
+
+        h1, h2, h3 {
+            color: var(--primary-color);
+            margin-top: 50px;
+        }
+
+        h1 {
+            font-size: 2em;
+        }
+
+        h2 {
+            font-size: 1.5em;
+        }
+
+        h3 {
+            font-size: 1em;
+        }
+
+        ol, ul {
+            margin-left: 30px;
+        }
+
+        ul {
+            list-style-type: square;
+        }
+
+        ol li, ul li {
+            margin: 10px;
+        }
+
+        dl {
+            margin-left: 30px;
+        }
+
+        dl dt {
+            margin: 5px 0;
+        }
+    </style>
 </head>
 <body>
     
@@ -144,7 +236,7 @@
             The Total Number of Units (TNU) is gotten by summing the CU of all the courses used in the calculation.<br><br>
             The Total Credit Point (TCP) is gotten by summing the CP of all the courses used in the calculation.<br><br>
             The Grade Point Average (GPA) then calculated:<br>
-            GPA = TCP / TNU
+            <code>GPA = TCP / TNU</code>
         </p>
 
         <p>
@@ -153,7 +245,7 @@
             While the summation of every TCP is gotten as Cummulative Credit Point (CCP).<br>
 
             Then the CGPA is calculated:<br>
-            CGPA = CCP / CNU
+            <code>CGPA = CCP / CNU</code>
         </p>
 
         <table>
