@@ -9,7 +9,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.NaijaGPACalculator">
-        <activity android:name=".NavigationActivity">
+
+        <activity android:name=".NavigationActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -19,7 +21,8 @@
 
         <activity
             android:name=".SemestersSetupActivity"
-            android:parentActivityName=".NavigationActivity"/>
+            android:parentActivityName=".NavigationActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize"/>
 
         <activity
             android:name=".SemesterPagerActivity"
@@ -27,7 +30,9 @@
 
         <activity
             android:name=".ResultActivity"
-            android:parentActivityName=".SemesterPagerActivity"/>
+            android:parentActivityName=".SemesterPagerActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize"/>
+
     </application>
 
 </manifest>
