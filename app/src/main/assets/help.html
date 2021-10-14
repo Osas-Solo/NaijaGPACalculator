@@ -9,77 +9,75 @@
 <body>
     
     <article>
-        <p>This GPA Calculator is based on FUPRE's grading system.</p>
-
         <h2>How to use this GPA Calculator:</h2>
+
         <ol>
-            <li>Select your institution and department.</li>
+            <li>On the Intro screen, select your institution.</li>
             <li>Check the level(s) and semester(s) that you want to calculate for.</li>
             <li>Click Proceed.</li>
             <li>
-                On the Calculator screen, all the course details for the level(s) and semester(s) you checked
-                will be displayed:
+                On the SemestersSetup screen, enter the number of courses you want to calculate for
+                each semester. You can only calculate a maximum of 30 courses for each semester.
+            </li>
+            <li>Click proceed.</li>
+            <li>
+                On the Semester screen, the number of courses entered would be shown with their
+                various inputs. You can navigate semesters by swiping left or right or you could
+                use the navigation buttons at the bottom of the screen:
                 <dl>
                     <dt>Select your grade for each course.</dt>
                     <dt>You may edit the Credit Units if need be.</dt>
                     <dt>You could leave a Credit Unit textfield blank.</dt>
-                    <dt>Click on the X button on any course fieldset if you do not wish to calculate that particular course.</dt>
-                    <dt>You may decide to add more courses to calculate for each semester at the bottom of page.
-                        <br>(This feature would be useful for carryover courses).</dt>
+                    <dt>
+                        Click on the delete button on any course if you do not wish to calculate
+                        that particular course.
+                    </dt>
+                    <dt>
+                        You may decide to add more courses to calculate for each semester by using
+                        the <b>+</b> button on the menu bar.
+                        <br>(This feature would be useful for carryover courses).
+                    </dt>
                 </dl>
             </li>
             <li>Click Calculate.</li>
             <li>The result of the calculation is then displayed.</li>
         </ol>
 
-        <h2>How to use the Universal GPA Calculator:</h2>
-        <p>
-            Follow the same process as the FUPRE GPA Calculator.
-            The only difference here is to select your institution before you begin.
-        </p>
-
         <h2>How to Calculate GPA manually:</h2>
         <table>
             <caption>University and College of Education Grading System</caption>
 
             <tr>
-                <th>Score</th>
                 <th>Grade</th>
                 <th>Rating</th>
             </tr>
 
             <tr>
-                <td>70 - 100</td>
                 <td>A</td>
                 <td>5</td>
             </tr>
 
             <tr>
-                <td>60 - 69</td>
                 <td>B</td>
                 <td>4</td>
             </tr>
 
             <tr>
-                <td>50 - 59</td>
                 <td>C</td>
                 <td>3</td>
             </tr>
 
             <tr>
-                <td>45 - 49</td>
                 <td>D</td>
                 <td>2</td>
             </tr>
 
             <tr>
-                <td>40 - 44</td>
                 <td>E</td>
-                <td>0</td>
+                <td>1</td>
             </tr>
 
             <tr>
-                <td>0 - 39</td>
                 <td>F</td>
                 <td>0</td>
             </tr>
@@ -89,83 +87,73 @@
             <caption>Polytechnic Grading System</caption>
 
             <tr>
-                <th>Score</th>
                 <th>Grade</th>
                 <th>Rating</th>
             </tr>
 
             <tr>
-                <td>75 - 100</td>
                 <td>A</td>
                 <td>4</td>
             </tr>
 
             <tr>
-                <td>70 - 74</td>
                 <td>AB</td>
                 <td>3.5</td>
             </tr>
 
             <tr>
-                <td>65 - 69</td>
                 <td>B</td>
+                <td>3.25</td>
+            </tr>
+
+            <tr>
+                <td>BC</td>
                 <td>3</td>
             </tr>
 
             <tr>
-                <td>60 - 64</td>
-                <td>BC</td>
+                <td>C</td>
+                <td>2.75</td>
+            </tr>
+
+            <tr>
+                <td>CD</td>
                 <td>2.5</td>
             </tr>
 
             <tr>
-                <td>55 - 59</td>
-                <td>C</td>
+                <td>D</td>
+                <td>2.25</td>
+            </tr>
+
+            <tr>
+                <td>E</td>
                 <td>2</td>
             </tr>
 
             <tr>
-                <td>50 - 54</td>
-                <td>CD</td>
-                <td>1.5</td>
-            </tr>
-
-            <tr>
-                <td>45 - 49</td>
-                <td>D</td>
-                <td>1</td>
-            </tr>
-
-            <tr>
-                <td>40 - 44</td>
-                <td>E</td>
-                <td>0.5</td>
-            </tr>
-
-            <tr>
-                <td>0 - 39</td>
                 <td>F</td>
                 <td>0</td>
             </tr>
         </table>
 
         <p>
-        <h3>The Credit Point (CP) of each course is calculated by:</h3>
+            <h3>The Credit Point (CP) of each course is calculated by:</h3>
 
-        CP = Credit Unit (CU) * Rating<br><br>
-        The Total Number of Units (TNU) is gotten by summing the CU of all the courses used in the calculation.<br><br>
-        The Total Credit Point (TCP) is gotten by summing the CP of all the courses used in the calculation.<br><br>
-        The Grade Point Average (GPA) then calculated:<br>
-        GPA = TCP / TNU
+            CP = Credit Unit (CU) * Rating<br><br>
+            The Total Number of Units (TNU) is gotten by summing the CU of all the courses used in the calculation.<br><br>
+            The Total Credit Point (TCP) is gotten by summing the CP of all the courses used in the calculation.<br><br>
+            The Grade Point Average (GPA) then calculated:<br>
+            GPA = TCP / TNU
         </p>
 
         <p>
-        <h3>For Cumulative GPA (CGPA) calculation:</h3>
-        The summation of every TNU is gotten from every semester from beginning to the current semester as Cummulative Number of Units (CNU).
-        While the summation of every TCP is gotten as Cummulative Credit Point (CCP).<br>
+            <h3>For Cumulative GPA (CGPA) calculation:</h3>
+            The summation of every TNU is gotten from every semester from beginning to the current semester as Cummulative Number of Units (CNU).
+            While the summation of every TCP is gotten as Cummulative Credit Point (CCP).<br>
 
-        Then the CGPA is calculated:<br>
-        CGPA = CCP / CNU
+            Then the CGPA is calculated:<br>
+            CGPA = CCP / CNU
         </p>
 
         <table>
