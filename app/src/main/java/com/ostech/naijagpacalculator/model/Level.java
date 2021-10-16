@@ -1,8 +1,9 @@
 package com.ostech.naijagpacalculator.model;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 
-public class Level {
+public class Level implements Serializable {
     private String levelName;
     private ArrayList<LevelSemester> semesters;
 

@@ -1,11 +1,15 @@
 package com.ostech.naijagpacalculator.model;
 
+import android.os.Parcel;
+import android.os.Parcelable;
+
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 
-public class AcademicRecord {
+public class AcademicRecord implements Serializable {
     private static final AcademicRecord academicRecord = new AcademicRecord();
 
     private Institution institutionType;

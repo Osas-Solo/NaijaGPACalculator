@@ -1,9 +1,10 @@
 package com.ostech.naijagpacalculator.model;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Arrays;
 
-public class Institution {
+public class Institution implements Serializable {
     public final double MAXIMUM_GPA = 5.0;
 
     private ArrayList<Level> levels = new ArrayList<>();

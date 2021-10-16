@@ -1,6 +1,8 @@
 package com.ostech.naijagpacalculator.model;
 
-public class LevelSemester {
+import java.io.Serializable;
+
+public class LevelSemester implements Serializable {
     private String semesterName;
     private boolean isSelected;
 

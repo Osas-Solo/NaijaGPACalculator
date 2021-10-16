@@ -1,8 +1,9 @@
 package com.ostech.naijagpacalculator.model;
 
+import java.io.Serializable;
 import java.util.Comparator;
 
-public class Course {
+public class Course implements Serializable {
     private String courseCode;
     private int creditUnit;
     private String grade;

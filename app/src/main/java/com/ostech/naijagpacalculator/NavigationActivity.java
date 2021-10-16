@@ -44,8 +44,6 @@ public class NavigationActivity extends AppCompatActivity
 
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
-        Log.i(TAG, "onCreate: Navigation View " + navigationView.getVisibility());
-
         switchFragment(new IntroFragment());
 
         //  when activity is started as an intent from SemesterPagerActivity

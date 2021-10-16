@@ -30,6 +30,7 @@ public class SemesterPagerActivity extends AppCompatActivity
         AddCoursesDialogFragment.AddCoursesDialogListener {
 
     private static final String TAG = SemesterPagerActivity.class.getCanonicalName();
+    private static final String ACADEMIC_RECORD = "ACADEMIC_RECORD";
 
     private DrawerLayout rootLayout;
     private ActionBarDrawerToggle drawerToggler;
@@ -44,6 +45,10 @@ public class SemesterPagerActivity extends AppCompatActivity
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_semester_pager);
+
+        if (savedInstanceState != null) {
+            restoreAcademicRecord(savedInstanceState);
+        }
 
         rootLayout = findViewById(R.id.semester_pager_drawer_layout);
         drawerToggler = new ActionBarDrawerToggle(this, rootLayout, R.string.nav_open,
@@ -75,6 +80,26 @@ public class SemesterPagerActivity extends AppCompatActivity
             semesterViewPager.setCurrentItem(i);
             break;
         }
+    }
+
+    private void restoreAcademicRecord(Bundle savedInstanceState) {
+        AcademicRecord recoveredAcademicRecord =
+                (AcademicRecord) savedInstanceState.getSerializable("ACADEMIC_RECORD");
+
+        if (recoveredAcademicRecord != null) {
+            Log.i(TAG, "onCreate: Recovered academic record:" + recoveredAcademicRecord.getInstitutionType());
+        }
+
+        AcademicRecord academicRecord = AcademicRecord.getInstance();
+        academicRecord.setInstitutionType(recoveredAcademicRecord.getInstitutionType());
+        academicRecord.setSemesterList(recoveredAcademicRecord.getSemesterList());
+    }
+
+    @Override
+    public void onSaveInstanceState(Bundle savedInstanceState) {
+        super.onSaveInstanceState(savedInstanceState);
+
+        savedInstanceState.putSerializable(ACADEMIC_RECORD, AcademicRecord.getInstance());
     }
 
     @Override
