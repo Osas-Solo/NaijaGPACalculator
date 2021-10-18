@@ -3,7 +3,7 @@
 An Android app to aid Nigerian university, polytechnic and college of education students in calculating GPA
 
 ## Screenshots
-![Intro Screen Light Mode](/screenshots/Intro Screen Light.jpg)
+![Intro Screen Light Mode](https://github.com/Osas-Solo/NaijaGPACalculator/blob/master/screenshots/Intro%20Screen%20Light.jpg)
 ![Intro Screen Dark Mode](/screenshots/Intro Screen Dark.jpg)
 ![Semester Setup Screen Dark Mode](/screenshots/Semester Setup Screen Dark.jpg)
 ![Semester Setup Screen Light Mode](/screenshots/Semester Setup Screen Light.jpg)
