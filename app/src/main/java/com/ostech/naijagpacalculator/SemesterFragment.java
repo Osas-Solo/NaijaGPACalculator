@@ -194,7 +194,6 @@ public class SemesterFragment extends Fragment {
 
         if (additionalNumberOfCourses > 0) {
             Toast courseAddedToast = new Toast(getActivity());
-            courseAddedToast.setDuration(Toast.LENGTH_SHORT);
 
             Log.i(TAG, "addCoursesToSemester: Number of courses: " + additionalNumberOfCourses);
 
@@ -202,13 +201,16 @@ public class SemesterFragment extends Fragment {
                     additionalNumberOfCourses;
 
             if (totalNumberOfCoursesInSemester < 30) {
-                courseAddedToast.setText(getString(R.string.courses_added_successfully_toast,
-                        additionalNumberOfCourses));
+                courseAddedToast = Toast.makeText(getActivity(),
+                        getString(R.string.courses_added_successfully_toast, additionalNumberOfCourses),
+                        Toast.LENGTH_SHORT);
 
                 currentSemester.addCourses(additionalNumberOfCourses);
                 updateSemesterRecyclerView();
             } else {
-                courseAddedToast.setText(getString(R.string.too_many_courses_in_semester_toast));
+                courseAddedToast = Toast.makeText(getActivity(),
+                        getString(R.string.too_many_courses_in_semester_toast),
+                        Toast.LENGTH_SHORT);
             }
 
             courseAddedToast.show();
@@ -222,10 +224,9 @@ public class SemesterFragment extends Fragment {
 
         updateSemesterRecyclerView();
 
-        Toast courseDeletedToast = new Toast(getActivity());
-        courseDeletedToast.setDuration(Toast.LENGTH_SHORT);
-        courseDeletedToast.setText(getString(R.string.course_deleted_successfully_toast,
-                unneededCourse.getCourseCode()));
+        Toast courseDeletedToast = Toast.makeText(getActivity(),
+                getString(R.string.course_deleted_successfully_toast, unneededCourse.getCourseCode()),
+                Toast.LENGTH_SHORT);
         courseDeletedToast.show();
     }
 

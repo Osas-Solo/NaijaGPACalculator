@@ -62,9 +62,8 @@ public class SemestersSetupFragment extends Fragment {
         boolean areTooManyCoursesInSemester = areTooManyCoursesInSemester();
 
         if (areTooManyCoursesInSemester) {
-            Toast tooManyCoursesInSemesterToast = new Toast(getActivity());
-            tooManyCoursesInSemesterToast.setText(R.string.too_many_courses_in_semester_toast);
-            tooManyCoursesInSemesterToast.setDuration(Toast.LENGTH_SHORT);
+            Toast tooManyCoursesInSemesterToast = Toast.makeText(getActivity(),
+                    getString(R.string.too_many_courses_in_semester_toast), Toast.LENGTH_SHORT);
             tooManyCoursesInSemesterToast.show();
         } else {
             Intent semesterPagerIntent = SemesterPagerActivity.newIntent(getActivity());

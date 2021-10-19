@@ -130,9 +130,9 @@ public class IntroFragment extends Fragment {
             Intent semestersSetupIntent = SemestersSetupActivity.newIntent(getActivity());
             startActivity(semestersSetupIntent);
         } else {
-            Toast noSemesterSelectedToast = new Toast(getActivity());
-            noSemesterSelectedToast.setText(R.string.no_semester_selected_toast);
-            noSemesterSelectedToast.setDuration(Toast.LENGTH_SHORT);
+            Toast noSemesterSelectedToast = Toast.makeText(getActivity(),
+                    getString(R.string.no_semester_selected_toast),
+                    Toast.LENGTH_SHORT);
             noSemesterSelectedToast.show();
         }
     }   //  end of setupAcademicRecord()
